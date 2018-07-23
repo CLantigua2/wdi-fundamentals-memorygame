@@ -1,2 +1,3 @@
-# wdi-fundamentals-memorygame
+# memory game
+
 memory game for General Assembly
