@@ -1,21 +1,24 @@
 // create variables that represent cards
 const cards = ["queen", "queen", "king", "king"];
+let cardsInPlay = []; //stores cards user flipped
 
-let cardsInPlay = [];
-let cardOne = cards[0];
-let cardTwo = cards[1];
-cardsInPlay.push(cardOne);
-console.log("The user just flipped " + cardOne);
-cardsInPlay.push(cardTwo);
-console.log("The user just flipped " + cardOne);
+//hold selected cards and give feedback to user
+let flipCard = function (cardId) {
+  cardsInPlay.push(cards[cardId]);
+  console.log("User flipped " + cards[cardId]);
+};
 
-
-
-
-if (cardsInPlay.length === 2) {
-  if (cardOne === cardTwo) {
-    alert(`You matched ${cardOne} with ${cardTwo}!!`);
+let checkForMatch = function () { //Check if 2 cards have been selected
+  if (cardsInPlay.length === 2 && cardsInPlay[0] === cardsInPlay[1]) {
+    alert(`You matched ${cardsInPlay[0]} with ${cardsInPlay[1]}!!`);
   } else {
+    //if they don't match
     alert("Sorry, try again");
   }
-}
+};
+
+//call yourCard function
+flipCard(0);
+flipCard(3);
+checkForMatch();
+console.log(cardsInPlay);
